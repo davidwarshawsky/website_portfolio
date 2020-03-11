@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+    David Warshawsky SVCTE Classes
+    -->
+    <meta charset='utf-8' />
+    <meta name="viewport" content="width=device-width" /> 
+
+    <title>SVCTE </title>
+    <script type = 'text/javascript'src='../nav/nav.js'></script>
+    <style type='text/css'>
+    /* styles go here */
+        @import "../portfolio.css";
+        div.casestudy span:nth-child(odd) {
+            color: orange;
+        }
+        div.casestudy span:nth-child(even) {
+            color: white;
+        }
+        #navigation img { 
+            background-color: #ABC;
+        }
+        body {
+            text-align: center;
+            background-color: #551A8B;
+        }
+        h1 {
+            color:Orange;
+        }
+        div#close {
+            cursor:pointer;
+            position:absolute;
+            top:8px;
+            right:20px;
+            border: 1px solid brown;
+            padding:4px 8px;
+            background-color:#AAAAAA;
+        }
+        div#content {
+            width: 800px;
+            margin: 1em auto;
+            position:relative;
+        }
+        img {
+            width:250px;
+            height:375px;
+            margin: 4px;
+        }
+        div#popup {
+            background-color: antiquewhite;
+            padding:16px;
+            box-shadow: 2px 2px 6px gray;
+            width:568px;
+            margin:0;
+            min-height: 5em;
+            position:absolute; 
+            top: 100px;
+            left:100px;
+            display:none;
+        }
+        footer {
+            color: #DACAAA ;
+        }
+        @media screen and (max-width:820px) {
+            div#content {
+                width:600px;
+            }
+            img {
+                width:180px;
+                height:270px;
+            }
+            div#popup {
+                width:368px;
+                
+            }
+        }
+        @media screen and (max-width:620px) {
+            div#content {
+                width:450px;
+            }
+            img {
+                width:130px;
+                height:195px;
+            }
+            div#popup {
+                width:338px;
+                left:40px;
+                
+            }
+        }
+        @media screen and (max-width:470px) {
+            div#content {
+                width:280px;
+            }
+            div#popup {
+                width:240px;
+                left:0px;
+                
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <h1>SVCTE Classes</h1>
+    <!-- page content will go here -->
+    <div id='content'>
+        <img src='animation.jpg' alt = 'animation'/>
+        <img src='film.jpg' alt = 'film'/>
+        <img src='forensic.jpg' alt = 'forensic'/>
+        <img src='internet.jpg' alt = 'internet'/>
+        <img src='mobileapp.jpg' alt = 'mobileapp'/>
+        <img src='precision.jpg'alt = 'precision'/>
+        <div id='popup'>
+            <div id='close'>&times;</div>
+            <p id='course'>Course</p>
+            <p id='room'>Room 103</p>
+            <p id='instructor'>Instructor</p>
+            <p><a target="_blank" id='more' href=''>More Info</a></p>
+        </div>
+    </div>
+    <div class='casestudy'>
+            <p>
+            <span>Objective: </span>
+            <span>Create a visual representation of SVCTE classes with useful information. </span>
+            </p>
+
+            <p>
+            <span>Problem: </span>
+            <span>Lots of text is not visually appealing and distracts the viewer.</span>
+            </p>
+
+            <p>
+            <span>Solution: </span>
+            <span>Make the images display a popup box with basic information when clicked with a link to more information. </span>
+            </p>
+    </div>
+    <div id='navigation'>
+            <a href='../index.html'><img src='../nav/white_small_left.png' alt = 'previous' /></a>
+            <a href='../index.html'><img src='../nav/white_hamburger.png' alt = 'home' /></a>
+            <a href='../index.html'><img src='../nav/white_small_right.png' alt = 'next' /></a>
+    </div>
+    <footer>&copy; 2020 David Warshawsky</footer>
+    
+    
+
+    <!--<div class="footer">
+        <p>© 2020 David Warshawsky</p>
+    </div>-->
+    <script type='text/javascript'>
+    // scripts will go here
+        var data = {
+            "animation": ["Animation","Mr. Whitman","Room 106","http://www.metroed.net/SVCTE/animation/",],
+            
+            "film": ["Film and Video Production","Mr. Furtado","Room 104","http://www.metroed.net/SVCTE/film-video-production/",],
+            
+            "forensic": ["Forensic Science","Mr. Eryavec","Room 706","http://www.metroed.net/svcte/forensic-science",],
+            
+            "internet": ["Internet Engineering","Mr. Keadle","Room 107","http://www.metroed.net/SVCTE/cybersecurity/",],
+            
+            "mobileapp": ["Mobile App Design and Computer Coding","Mr. Brautigam","Room 103","http://www.metroed.net/SVCTE/mobile-app-design-and-computer-coding/",],
+            "precision": ["Engineering for Manufacturing Technology","Mr. Betts","Room 710","http://www.metroed.net/SVCTE/precision-machining/",],
+        }
+        var images = document.getElementsByTagName('img');
+        document.getElementById('close').onclick = closePopup;
+        for (var i=0;i<images.length; i++) {
+            images[i].onclick = doPopup;
+            
+        }
+        
+        function doPopup(e) {
+            var which = e.currentTarget.getAttribute("alt");
+            document.getElementById("course").innerHTML = data[which][0];
+            document.getElementById("room").innerHTML = data[which][1];
+            document.getElementById("instructor").innerHTML = data[which][2];
+            document.getElementById("more").href = data[which][3];
+            document.getElementById("popup").style.display = 'block';
+            
+            
+        }
+        
+        function closePopup() {
+            document.getElementById('popup').style.display = 'none';
+        }
+        
+
+    </script>
+</body>
+</html>

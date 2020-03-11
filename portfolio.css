@@ -1,0 +1,23 @@
+div.casestudy {
+    width:50%;
+    max-width: 500px;
+    margin: 1em auto;
+    text-align: left;
+}
+
+div.casestudy span {
+    display: inline-block;
+}
+
+div.casestudy span:nth-child(odd) {
+    font-weight: bold;
+    color: green;
+    margin-top: 1em;
+}
+
+/* navigation */
+#navigation { text-align: center; margin-top: 2em; }
+#navigation img { width: 24px; height: 24px;
+  padding: 12px; background-color: #642;
+  margin: 0.25em;
+}

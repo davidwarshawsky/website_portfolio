@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+    David Warshawsky 09/13/2018 AM Mobile App Design Fortune Cookies
+    -->
+    <meta charset='utf-8' />
+    <link href="https://fonts.googleapis.com/css?family=Marck+Script" rel="stylesheet">
+    <script type = 'text/javascript'src='nav/nav.js'></script>
+    <title>fortune</title>
+    <style type='text/css'>
+    /* styles go here */
+        @import "portfolio.css";
+        body {
+            align-content: center;
+            text-align: center;
+            background-color:#AABBCC55 ;
+            color:burlywood;
+            font-weight: bolder;
+            
+        }
+        div#fortune{
+            margin:2em 0;
+            font-size: 50px;
+            font-family: 'Marck Script', cursive;
+            
+        }
+        button#newfortune {
+            text-align: left;
+            border-radius:8px;
+            color:cadetblue;
+            background-color:beige;
+            font-size:200px;
+            text-align:right;
+            padding:4px;
+        }
+        p {
+            font-size:20px;}
+         #navigation img {  
+        background-color: #86608E;
+    }
+    div.casestudy span:nth-child(odd) {
+        color: #F38787;
+    }
+    div.casestudy span:nth-child(even) { 
+        color: #0F2C59;
+    }
+    #navigation img {  
+        background-color: powderblue;
+    }
+    div.casestudy span:nth-child(odd) {
+        color: #F1C2A1;
+    }
+    div.casestudy span:nth-child(even) { 
+        color: cadetblue;
+    }
+        
+        
+
+    </style>
+</head>
+
+<body id='body'>
+    <!--<h1>fortune</h1>-->
+    <!-- page content will go here -->
+    <p>Your fortune for today</p>
+    <div id='fortune'>Fortune goes here</div>
+    <span>
+        <p></p>
+    <button id='newfortune'>&#129376;<p>Press me for a new fortune</p> </button>
+        </span>
+    <div class='casestudy'>
+            <p>
+            <span>Objective: </span>
+            <span>Have a user receive a fortune every time they visit the website and have the opportunity to get more.</span>
+            </p>
+
+            <p>
+            <span>Problem: </span>
+            <span>Give people a unique fortune that is not set in a predetermined order.</span>
+            </p>
+
+            <p>
+            <span>Solution: </span>
+            <span>Create a database with many fortunes and use a random number generator to select a random fortune to display.</span>
+            </p>
+
+    </div>
+    <div id='navigation'>
+            <a href='index.html'><img src='nav/white_small_left.png' alt='previous' /></a>
+            <a href='index.html'><img src='nav/white_hamburger.png' alt='home' /></a>
+            <a href='index.html'><img src='nav/white_small_right.png' alt='next' /></a>
+        </div>
+
+
+    <footer>&copy; 2020 David Warshawsky</footer>
+    <script type='text/javascript'>
+    // scripts will go here
+        var fortunes = ["A bad workman always blames his tools.",
+                        "Don't pursue hapiness-create it.",
+                        "Courage is not the absence of fear, it is the conquest of it.",
+                        "All things are difficult before they are easy.",
+                        "If you want the rainbow, you have to tolerate the rain.",
+                        "Fear is interest paid on a debt you may not owe.",
+                        "Hardly anyone knows how much is gained by ignoring the future.",
+                        "The wise man is the one that makes you think he is dumb.",
+                        "The usefulness of a cup is in its emptiness.",
+                        "He who throws mud loses ground.",
+                        "The most exhausting thing in life is being insincere."
+                       ];
+        
+        document.getElementById('newfortune').onclick = showfortune;
+        
+        function showfortune(){
+            var f = randomElement(fortunes);
+            document.getElementById('fortune').innerHTML = f;
+        }
+        function randomInt(n) {
+            return Math.floor(Math.random() * n);
+        }
+        function randomElement(data) {
+            var r = randomInt(data.length);
+            return data[r];
+        }
+        function vcenter() {
+            var ph = window.innerHeight;
+            topmargin - Math.max(topmargin,10);
+            var topmargin = (ph-300) /2;
+            document.getElementById('body').style.marginTop = topmargin +"px";
+        }
+        window.onresize=vcenter;
+        showfortune();
+    </script>
+</body>
+</html>

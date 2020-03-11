@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!--
+David Warshawsky, BMI, 09/11/2018 
+    -->
+    <meta charset='utf-8' />
+    <title>BMI Calculator</title>
+    <script type = 'text/javascript'src='nav/nav.js'></script>
+    <style type='text/css'>
+    /* styles go here */
+        @import "portfolio.css";
+    footer {
+            color:#FA558B ;
+}
+        body {
+            text-align: center;
+            background-color: #AABBFC52;
+            font-family: Arial,monospace;
+        }
+        div.blue {
+            background-color: green;
+            width: 60%;
+            max-width:400px;
+            margin:1em auto;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 5px;
+        }
+        div.row {
+            text-align: left;
+        }
+        h1 {
+            color:#FA558B;
+        }
+        label {
+            display: inline-block;
+            width:40%;
+            text-align: right;
+        }
+        input {
+            margin:.4em;
+            text-align: left;
+        }
+        input#submit{
+            background-color: #FFA5FFF2;
+        }
+        #navigation img { 
+            background-color: darkseagreen;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>BMI Calculator</h1>
+    <!-- page content will go here -->
+    <div class='blue'>
+        
+        <div class='row'>
+            <label>Pounds:</label>
+            <input type='text' id='pounds' size='10' />
+        </div>
+        
+        <div class='row'>
+            <label>Feet:</label>
+            <input type='text' id='feet' size='10' />
+        </div>
+        
+        <div class='row'>
+            <label>Inches:</label>
+            <input type='text' id='inches' size='10'/>
+        </div>
+        
+        
+        <div class='row'>
+            <label></label>
+            <input type='button' id='submit' value='Submit'/>
+        </div>
+    </div>
+    
+    <div class='blue'>
+        
+        <p id='bmi'>The BMI Will go Here</p>
+        
+        <p id='range'>The Range Will go Here</p>
+    </div>
+    
+    <div class='casestudy'>
+        <p>
+        <span>Objective: </span>
+        <span>Create a calculator that displays a person’s BMI and their BMI range.</span>
+        </p>
+        
+        <p>
+        <span>Problem: </span>
+        <span>Get the user's height and weight, calculate their bmi, and explain what it means.</span>
+        </p>
+        
+        <p>
+        <span>Solution: </span>
+        <span>Use a formula to calculate the user’s BMI. People with BMI less than 18.5 are underweight, if it is between 18.5 and less than 25 they are in a normal weight range, between 25 and less than 30 they are in an overweight  range. If it is 30 or greater the user is that they are in the very overweight range.</span>
+        </p>
+        
+        <div id='navigation'>
+            <a href='index.html'><img src='nav/white_small_left.png' alt='previous' /></a>
+            <a href='index.html'><img src='nav/white_hamburger.png' alt='home' /></a>
+            <a href='index.html'><img src='nav/white_small_right.png' alt='next' /></a>
+        </div>
+    </div>
+    <footer>&copy; 2020 David Warshawsky</footer>   
+
+    
+    <script type='text/javascript'>
+    // scripts will go here
+        document.getElementById('submit').onclick = calculate;
+        
+        function calculate() {
+            // get the three numbers
+            var w = document.getElementById('pounds').value;
+            var f = document.getElementById('feet').value;
+            var i = document.getElementById('inches').value;
+            
+            w = parseFloat(w);
+            f = parseFloat(f);
+            i = parseFloat(i);
+            //calculate: bmi = 703 * w / h^2
+            
+            
+            var h = (f*12) + i ;
+            var bmi = (703 * w)/(h * h);
+            
+            document.getElementById('bmi').innerHTML = "Your BMI is " + bmi.toFixed(1) + ".";
+            
+            var range = "";
+            if(bmi<18.5) {
+                range="underweight";
+            }
+            else if (bmi<25) {
+                range= "normal";
+            }
+            else if (bmi <30) {
+                range = "overweight";
+            }
+            else {
+                range = "very overweight";
+            }
+            document.getElementById('range').innerHTML = "This BMI is in the "+range + " range.";
+        }
+        
+    </script>
+</body>
+</html>
