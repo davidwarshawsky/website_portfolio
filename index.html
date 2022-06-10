@@ -5,7 +5,7 @@
     David Warshawsky, Portfolio
     -->
     <meta charset='utf-8' />
-    <title>David Warshawsky Portfolio © 2020  </title>
+    <title>Web Design Warshawsky Portfolio © 2020  </title>
     <style type='text/css'>
     /* styles go here */
         @import "portfolio.css";
@@ -14,11 +14,14 @@
             left: 0;
             bottom: 0;
             width: 100%;
-            height: 3%;
+            height: 5%;
             background-color: lightblue;
             color: white;
             text-align: center;
-}
+        }
+        .footer a {
+            color:white;
+        }
         h1,h2 {
             text-align: center;
             color:darksalmon;
@@ -47,13 +50,34 @@
             border-style: solid;
             border-width: 5px green ;
         }
+        div.blue {
+            background-color: green;
+            width: 60%;
+            max-width:400px;
+            margin:1em auto;
+            padding: 2em;
+            border-radius: 8px;
+            box-shadow: 5px;
+        }
+        div.row {
+            text-align: left;
+        }
+        label {
+            display: inline-block;
+            width:40%;
+            text-align: right;
+        }
+        input {
+            margin:.4em;
+            text-align: left;
+        }
         
 
     </style>
 </head>
 
 <body>
-    <h1>Portfolio</h1>
+    <h1>Web Design Portfolio</h1>
     <h2>David Warshawsky</h2><br />
     <!-- page content will go here -->
     <div id='projects'>
@@ -151,10 +175,35 @@
             </figure>
         </a>
     </div>
+
+    <div class='casestudy' id="SubjectsBox">
+        
+        <div class="Subjects">
+            <p style="color:blue;"><b>Web Design Tools:</b></p>
+            <ul>
+                <li>Adobe Photoshop</li>
+                <li>Adobe Illustrator</li>
+                <li>HTML</li>
+                <li>CSS</li>
+            </ul>
+        </div>
+
+        <div class="Subjects">
+            <p style="color:blue;"><b>Coding and Web Hosting Tools Used:</b></p>
+            <ul>
+                <li>JavaScript</li>
+                <li>Heroku</li>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>Git and <a href="https://github.com/davidwarshawsky/website_portfolio">GitHub</a></li>
+            </ul>
+        </div>
+
+    </div>
         
     
     <div class="footer">
-        <p>© 2020 David Warshawsky</p>
+        <p>© 2020 David Warshawsky<a href="mailto:davidawarshawsky@gmail.com">         davidawarshawsky@gmail.com</a></p>
     </div>
     
 
